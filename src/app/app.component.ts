@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tictactoe-ai-angular';
+
+  isShowStartScreen = true;
+  isShowStartButton = true;
+  isShowBoard = false;
+
+  startGame() {
+    this.isShowStartScreen = false;
+    this.isShowStartButton = false;
+    this.isShowBoard = true;
+  }
 }
