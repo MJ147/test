@@ -13,6 +13,8 @@ export class BoardComponent implements OnInit{
   @Input()
   isShowBoard;
 
+  squares = Array(9)
+
   board$: Observable<BoardModel>;
 
   constructor(private boardService: BoardService) { }

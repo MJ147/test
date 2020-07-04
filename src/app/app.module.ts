@@ -7,12 +7,14 @@ import { BoardComponent } from './component/board/board.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BoardService } from './service/board.service';
 import { StartComponent } from './component/start/start.component';
+import { SquareComponent } from './component/square/square.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
-    StartComponent
+    StartComponent,
+    SquareComponent
   ],
   imports: [
     BrowserModule,
