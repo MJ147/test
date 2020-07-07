@@ -1,30 +1,38 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BoardModel } from '../../model/board.model';
-import { Observable } from 'rxjs';
-import { BoardService } from 'src/app/service/board.service';
+import { Board, Game } from '../../model/game.model';
+import { Observable, Subject } from 'rxjs';
+import { HttpService } from 'src/app/service/http.service';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit{
+export class BoardComponent implements OnInit {
 
   @Input()
   isShowBoard;
-
+  id: number = 99;
   squares = Array(9)
+  game: Game;
+  gameSubject = new Subject<Game>();
 
-  board$: Observable<BoardModel>;
-
-  constructor(private boardService: BoardService) { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.board$ = this.boardService.createBoard();
+    this.createGame();
   }
 
-  getBoard() {
-    this.board$ = this.boardService.getBoard();
+  createGame(): void {
+    this.httpService.createGame().subscribe(game => {
+      this.game = game;
+    });
+  }
+
+  getGame(gameId: number): void {
+    this.httpService.getGame(gameId).subscribe(game => {
+      this.game = game;
+    });
   }
 
 }
