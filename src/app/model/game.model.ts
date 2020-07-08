@@ -1,12 +1,17 @@
+export interface Square {
+    id: number;
+    value: number;
+    numberInBoard: number;
+}
+
 export interface Board {
     id: number;
-    size: number;
-    squares: number[];
+    squares: Square[];
 }
 
 export interface Player {
     id: number;
-    xo: number;
+    value: number;
 }
 
 export interface Game {

@@ -1,13 +1,9 @@
 <ng-container *ngIf="isShowBoard">
-    {{ game | json }}
-    {{ id | json }}
+    <!-- {{ game | json }} -->
     <main>
         <app-square
-            *ngFor="let val of squares; let i = index" 
-            [game]="game"
-            [squareNumber]="i"
-            [squareValue]="game.board.squares[i]">
+            *ngFor="let square of squares; let i = index" 
+            [square]="game.board.squares[i]">
         </app-square>
     </main>
-    <button (click)="getGame(1)">set game</button>
 </ng-container>

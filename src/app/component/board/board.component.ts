@@ -29,10 +29,4 @@ export class BoardComponent implements OnInit {
     });
   }
 
-  getGame(gameId: number): void {
-    this.httpService.getGame(gameId).subscribe(game => {
-      this.game = game;
-    });
-  }
-
 }
