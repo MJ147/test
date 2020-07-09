@@ -9,6 +9,7 @@ import { HttpService } from './service/http.service';
 import { StartComponent } from './component/start/start.component';
 import { SquareComponent } from './component/square/square.component';
 import { FormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms'
     SquareComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
