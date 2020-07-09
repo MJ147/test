@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoardComponent } from './component/board/board.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BoardService } from './service/board.service';
+import { HttpService } from './service/http.service';
 import { StartComponent } from './component/start/start.component';
 import { SquareComponent } from './component/square/square.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { SquareComponent } from './component/square/square.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [BoardService],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
