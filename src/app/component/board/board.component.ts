@@ -29,4 +29,10 @@ export class BoardComponent implements OnInit {
     });
   }
 
+  resetBoard(boardId: number): void {
+    this.httpService.resetBoard(boardId).subscribe(board => {
+      this.game.board = board;
+    });
+  }
+
 }

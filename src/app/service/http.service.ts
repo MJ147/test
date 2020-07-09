@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Game, Square } from '../model/game.model';
+import { Game, Square, Board } from '../model/game.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,8 +16,12 @@ export class HttpService {
     return this.http.post<Game>(this.ROOT_URL + 'game/create', null);
   }
 
-  makeMove(squareId: Number): Observable<Square>{
+  makeMove(squareId: number): Observable<Square>{
     return this.http.put<Square>(this.ROOT_URL + 'player/move/' + squareId, null);
+  }
+
+  resetBoard(boardId: number): Observable<Board>{
+    return this.http.put<Board>(this.ROOT_URL + 'board/reset/' + boardId, null);
   }
 
 }
