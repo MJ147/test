@@ -19,7 +19,6 @@ import { RouterModule } from '@angular/router';
     SquareComponent
   ],
   imports: [
-    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
